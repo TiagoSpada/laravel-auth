@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container my-4">
-        <h1 class="mb-3">Creazione nuovo progetto</h1>
+        <h1 class="mb-3">Modifica {{ $project->title }}</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -15,14 +15,16 @@
         @endif
 
 
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.update', $project) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titolo" placeholder="Titolo" name="title">
+                <input type="text" class="form-control" id="titolo" placeholder="Titolo" name="title"
+                    value="{{ old('title', $project->title) }}">
                 <label for="titolo">Titolo</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Descrizione" id="descrizione" name="description" style="height: 150px"></textarea>
+                <textarea class="form-control" placeholder="Descrizione" id="descrizione" name="description" style="height: 150px">{{ old('title', $project->description) }}</textarea>
                 <label for="descrizione">Descrizione</label>
             </div>
             <button class="btn btn-primary">Crea nuovo post</button>
