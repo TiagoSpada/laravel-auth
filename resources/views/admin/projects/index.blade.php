@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container my-4">
-        <div class="d-flex justify-space-between align-items-center">
+        <div class="d-flex justify-space-between align-items-center mb-3">
             <div class="col">
                 <h1>Lista progetti</h1>
             </div>
