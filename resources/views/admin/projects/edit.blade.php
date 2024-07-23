@@ -27,7 +27,7 @@
                 <textarea class="form-control" placeholder="Descrizione" id="descrizione" name="description" style="height: 150px">{{ old('title', $project->description) }}</textarea>
                 <label for="descrizione">Descrizione</label>
             </div>
-            <button class="btn btn-primary">Crea nuovo post</button>
+            <button class="btn btn-primary">Conferma modifiche</button>
         </form>
     </div>
 @endsection

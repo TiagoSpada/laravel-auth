@@ -25,7 +25,7 @@
                 <textarea class="form-control" placeholder="Descrizione" id="descrizione" name="description" style="height: 150px"></textarea>
                 <label for="descrizione">Descrizione</label>
             </div>
-            <button class="btn btn-primary">Crea nuovo post</button>
+            <button class="btn btn-primary"><i class="fa-solid fa-pencil"></i>Crea nuovo progetto</button>
         </form>
     </div>
 @endsection

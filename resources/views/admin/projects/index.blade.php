@@ -27,13 +27,28 @@
                 <tbody>
                     @foreach ($projects as $project)
                         <tr>
-                            <th scope="row">{{ $project->id }}</th>
+                            <th scope="row"><a href="{{ route('admin.projects.show', $project) }}"
+                                    class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{{ $project->id }}</a>
+                            </th>
                             <td class="px-3">
                                 <a href="{{ route('admin.projects.show', $project) }}"
                                     class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover">{{ $project->title }}</a>
                             </td>
                             <td class="overflow-hidden">{{ $project->description }}</td>
-                            <td><a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">Mod.</a>
+                            <td>
+                                <div class="d-flex gap-2 justify-content-end align-items-center">
+                                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning fs-6"
+                                        as="button">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button class="btn btn-danger fs-6"><i class="fa-solid fa-trash"></i></button>
+
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
